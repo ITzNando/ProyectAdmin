@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="container">
+                        <div class="card-header">
+                            <center>
+                                <h4>Login</h4>
+                            </center>
+                        </div>
+
+                        <form id="loginform" method="post" th:action="@{/auth/login-post}" role="form">
+                            <div class="row form-group">
+                                <label class="col-md-3">Usuario</label>
+                                <input type="text" name="username" class="form-control col-md-7" />
+                            </div>
+                            <div class="row form-group">
+                                <label class="col-md-3">Constraseña</label>
+                                <input type="password" name="password" class="form-control col-md-7" />
+                            </div>
+                            <div class="row form-group">
+                                <input type="submit" class="btn btn-success btn-block col-md-7 offset-3"
+                                    value="Continuar" href="/persona" />
+                            </div>
+
+                        </form>
+
+                        <div>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                                    <ul class="navbar-nav mr-auto">
+                                        <a>Si no tiene cuenta, registrese:</a>
+
+                                        <il class="nav-item ml-5">
+                                            <a th:href="@{/auth/registro}">Registro</a>
+                                        </il>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

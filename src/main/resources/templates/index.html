@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    </head>
+    <body>
+    <div class="container">     
+        <h1>Listado</h1>
+        <a th:href="@{/persona/create}" class="btn btn-primary">Agregar</a> 
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Accion</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="personas:${persona}">
+                <td scope="row" th:text="${personas.id}"></td>
+                <td th:text="${personas.nombre}"></td>
+                <td th:text="${personas.correo}"></td>
+                <td th:text="${personas.numero}"></td>
+                <td><a th:href="@{persona/edit/{id} (id=${personas.id})}" class="btn btn-warning">Editar</a></td>
+                <td><a th:href="@{persona/delete/{id} (id=${personas.id})}" class="btn btn-danger">Eliminar</a></td>
+                <th></th>
+                <th></th>
+              </tr>
+              
+            </tbody>
+          </table>
+          <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-primary mt-3">Salir</button>
+          </form> 
+        </div> 
+        
+    </body>
+</html>
