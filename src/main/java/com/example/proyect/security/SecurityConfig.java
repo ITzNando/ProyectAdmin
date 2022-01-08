@@ -1,4 +1,4 @@
-package com.example.proyect.Security;
+package com.example.proyect.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -29,10 +29,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
        http.authorizeRequests().antMatchers("/","/auth/**","/public/**","/css/**","/js/**").permitAll().anyRequest().authenticated()
        .and()
-            .formLogin().loginPage("/auth/login").defaultSuccessUrl("/private/index",true).failureUrl("/auth/login?error=true")
+            .formLogin().loginPage("/auth/login").defaultSuccessUrl("/ciclista/",true).failureUrl("/auth/login?error=true")
             .loginProcessingUrl("/auth/login-post").permitAll()
         .and()
-            .logout().logoutUrl("/logout").logoutSuccessUrl("/public/index");
+            .logout().logoutUrl("/logout").logoutSuccessUrl("/public/index"); 
     }
     
 }

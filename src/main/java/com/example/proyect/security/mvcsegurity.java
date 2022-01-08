@@ -1,4 +1,4 @@
-package com.example.proyect.Security;
+package com.example.proyect.security;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

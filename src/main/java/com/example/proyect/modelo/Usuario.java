@@ -1,4 +1,4 @@
-package com.example.proyect.Modelo;
+package com.example.proyect.modelo;
 
 import java.io.Serializable;
 
@@ -95,5 +95,6 @@ public class Usuario implements Serializable{
         this.password = password;
     }
     
+
     private static final long serialVersionUID = 1L;
 }

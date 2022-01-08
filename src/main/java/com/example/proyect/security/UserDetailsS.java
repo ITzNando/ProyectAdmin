@@ -1,7 +1,7 @@
-package com.example.proyect.Security;
+package com.example.proyect.security;
 
-import com.example.proyect.Interfaz.IUsuarioDAO;
-import com.example.proyect.Modelo.Usuario;
+import com.example.proyect.modelo.Usuario;
+import com.example.proyect.repository.IUsuarioDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

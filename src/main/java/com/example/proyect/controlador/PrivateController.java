@@ -1,9 +1,9 @@
-package com.example.proyect.Controlador;
+package com.example.proyect.controlador;
 
 import javax.servlet.http.HttpSession;
 
-import com.example.proyect.Modelo.Usuario;
-import com.example.proyect.Servicio.IUsuarioS;
+import com.example.proyect.modelo.Usuario;
+import com.example.proyect.service.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PrivateController {
     
     @Autowired
-    private IUsuarioS usuarioS; 
+    private UsuarioService usuarioS; 
 
     @GetMapping("/index")
     public String index(Authentication auth, HttpSession session){

@@ -8,42 +8,34 @@
     </head>
     <body>
     <div class="container">     
-        <h1>Competencia-Ruta del Platano</h1>
-        <a th:href="@{/ciclista/create}" class="btn btn-primary">Agregar</a> 
+        <h1>Top Competencia-Ruta del Platano</h1>
+        <a th:href="@{/ciclista/}" class="btn btn-success">Regresar</a>
+        <a th:href="@{/ciclista/select}" class="btn btn-success">Actualizar</a>  
         <table class="table">
             <thead>
               <tr>
                 <th scope="col">Id</th>
                  <th scope="col">Usuario</th>
-                <th scope="col">Tiempo</th>
+                <th scope="col">Tiempo</th> 
                 <th scope="col">Velocidad Promedio</th>
                 <th scope="col">Potencia Promedio</th> 
-                <th scope="col">Acci&#243;n</th>
-                <th scope="col">Acci&#243;n</th>
               </tr>
-            </thead>
+            </thead> 
             <tbody>
               <tr th:each="estadistica:${listEstadistica}">
                 <td scope="row" th:text="${estadistica.idEstadistica}"></td>  
                  <td th:text="${estadistica.ciclista.nombre}"></td>                          
                 <td th:text="${estadistica.tiempo}"></td>
                 <td th:text="${estadistica.velocidad}"></td>
-                <td th:text="${estadistica.potencia}"></td>
-                <td><a th:href="@{/ciclista/edit/{id} (id=${estadistica.idEstadistica})}" class="btn btn-warning">Editar</a></td>
-                <td><a th:href="@{/ciclista/delete/{id} (id=${estadistica.idEstadistica})}" class="btn btn-danger">Eliminar</a></td>
-                
-               
+                <td th:text="${estadistica.potencia}"></td>             
                 <th></th>
                 <th></th>
               </tr>
-              
             </tbody>
           </table>
           <form th:action="@{/logout}" method="post">
             <button type="submit" class="btn btn-primary mt-3">Salir</button>
           </form> 
-          <a th:href="@{/ciclista/select}" class="btn btn-primary mt-3">TOP</a>  
         </div> 
-        
     </body>
 </html>

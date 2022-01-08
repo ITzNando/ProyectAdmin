@@ -8,31 +8,39 @@
     </head>
     <body>
         <div class="container">
-            <h1>Agregar su datos de la carrera</h1>
+            <h1>Actualizar su datos de la carrera</h1>
             
             <form th:action="@{/ciclista/save}" th:object="${estadistica}" method="POST">   
-
                 <div class="mb-3">
+                 <input type="hidden" name="idEstadistica" th:value="${estadistica.idEstadistica}">                
+                 <input  type="hidden" class="form-control" id="formGroupExampleInput4" name="idCiclista" 
+                    th:field="${estadistica.ciclista.idCiclista}"
+                    >
                     <label for="formGroupExampleInput4" class="form-label">Usuario</label>
-                    <input type="text" class="form-control"  required="required" id="formGroupExampleInput4" name="usuario" 
+                    <input type="text" class="form-control" required="required" id="formGroupExampleInput4" name="usuario" 
                     th:field="${estadistica.ciclista.nombre}"
                     placeholder="Ponga su usuario">
+                   
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Tiempo</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" required="required" name="tiempo" placeholder="Ejemplo: 12:59:59">
+                    <input type="text" class="form-control" required="required" id="formGroupExampleInput" th:field="${estadistica.tiempo}" name="tiempo" placeholder="Ejemplo: 12:59:59">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Velocidad Promedio</label>
-                    <input type="number" class="form-control"  required="required" id="formGroupExampleInput2" name="velocidad" placeholder="Ejemplo: 20">
+                    <input type="number" class="form-control" required="required" id="formGroupExampleInput2" name="velocidad" 
+                    th:field="${estadistica.velocidad}"
+                    placeholder="Ejemplo: 20">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput3" class="form-label">Potencia Promedio</label>
-                    <input type="number"  required="required" class="form-control" id="formGroupExampleInput3" name="potencia" placeholder="Ejemplo: 160"> 
+                    <input type="number" class="form-control" required="required" id="formGroupExampleInput3" 
+                    th:field="${estadistica.potencia}"
+                    name="potencia" placeholder="Ejemplo: 160"> 
                 </div>
                 
 
-                <button type="submit" class="btn btn-success">Guardar</button>
+                <button type="submit" class="btn btn-success">Actualizar</button>
             </form> 
         </div>
         

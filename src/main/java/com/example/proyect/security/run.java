@@ -1,4 +1,4 @@
-package com.example.proyect.Security;
+package com.example.proyect.security;
 
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,15 +1,15 @@
-package com.example.proyect.IMPL;
+package com.example.proyect.service.impl;
 
-import com.example.proyect.Interfaz.IUsuarioDAO;
-import com.example.proyect.Modelo.Usuario;
-import com.example.proyect.Servicio.IUsuarioS;
+import com.example.proyect.modelo.Usuario;
+import com.example.proyect.repository.IUsuarioDAO;
+import com.example.proyect.service.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioServiceimpl implements IUsuarioS{
+public class UsuarioServiceimpl implements UsuarioService{
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;

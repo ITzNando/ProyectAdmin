@@ -1,7 +1,7 @@
-package com.example.proyect.Controlador;
+package com.example.proyect.controlador;
 
-import com.example.proyect.Modelo.Usuario;
-import com.example.proyect.Servicio.IUsuarioS;
+import com.example.proyect.modelo.Usuario;
+import com.example.proyect.service.UsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class LoginController {
     
     @Autowired
-    private IUsuarioS usuarioS;
+    private UsuarioService usuarioS;
 
     @GetMapping("/auth/login")
     public String login(Model model){
@@ -29,7 +29,7 @@ public class LoginController {
     public String registroForm(Model model){
         model.addAttribute("usuario", new Usuario());
 
-        return "registro";
+        return "registro"; 
     }
 
     @PostMapping("/auth/registro")
